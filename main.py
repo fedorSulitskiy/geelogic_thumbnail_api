@@ -14,6 +14,7 @@ CORS(app)
 async def get_screenshot(html_string):
     # Set up options
     chrome_options = Options()
+    chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--window-size=1980,960")
@@ -66,7 +67,7 @@ if __name__ == '__main__':
 # def get_map_thumbnail():
 #     html_string = request.form.get('data')  
     
-#     # Initialise selenium driver
+#     # Initialise selenium drivers
 #     driver = webdriver.Chrome()
 
 #     # Create a data URI from the HTML code
